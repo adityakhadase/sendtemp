@@ -1,0 +1,49 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum ShareMode {
+  SINGLE
+  MULTI
+}
+
+enum ShareStatus {
+  ACTIVE
+  IN_PROGRESS
+  CONSUMED
+  EXPIRED
+}
+
+model File {
+  id           String   @id @default(uuid())
+  originalName String
+  mimeType     String   @default("application/octet-stream")
+  sizeBytes    BigInt
+  storageKey   String   @unique
+  createdAt    DateTime @default(now())
+
+  share        Share?
+
+  @@map("files")
+}
+
+model Share {
+  id        String      @id @default(uuid())
+  fileId    String      @unique
+  file      File        @relation(fields: [fileId], references: [id], onDelete: Cascade)
+  shareCode String      @unique
+  mode      ShareMode   @default(SINGLE)
+  status    ShareStatus @default(ACTIVE)
+  expiresAt DateTime
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  @@index([shareCode])
+  @@index([status, expiresAt])
+  @@map("shares")
+}

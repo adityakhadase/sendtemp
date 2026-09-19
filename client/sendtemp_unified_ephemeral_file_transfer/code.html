@@ -1,0 +1,774 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Geist:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container-high": "#2a2a2c",
+          "on-tertiary-fixed": "#1b1b1e",
+          "on-secondary-container": "#bcbbc5",
+          "primary-fixed": "#e2e2e3",
+          "on-primary-fixed": "#1a1c1d",
+          "surface-dim": "#131315",
+          "on-surface": "#e5e1e4",
+          "on-tertiary-container": "#656467",
+          "secondary-container": "#4a4b53",
+          "on-background": "#e5e1e4",
+          "on-secondary": "#2f3038",
+          "surface-container-lowest": "#0e0e10",
+          "surface": "#131315",
+          "surface-bright": "#39393b",
+          "surface-container-highest": "#353437",
+          "on-primary-container": "#636466",
+          "surface-container": "#201f22",
+          "tertiary-container": "#e4e1e5",
+          "tertiary-fixed-dim": "#c8c6c9",
+          "on-primary": "#2f3132",
+          "error": "#ffb4ab",
+          "background": "#131315",
+          "primary": "#ffffff",
+          "on-surface-variant": "#c4c7c9",
+          "outline-variant": "#444749",
+          "surface-variant": "#353437",
+          "inverse-on-surface": "#313032",
+          "secondary-fixed": "#e3e1ec",
+          "on-error": "#690005",
+          "on-error-container": "#ffdad6",
+          "primary-container": "#e2e2e3",
+          "on-secondary-fixed": "#1a1b22",
+          "secondary": "#c6c5cf",
+          "on-tertiary-fixed-variant": "#47464a",
+          "surface-container-low": "#1c1b1d",
+          "inverse-primary": "#5d5e60",
+          "primary-fixed-dim": "#c6c6c7",
+          "on-secondary-fixed-variant": "#46464e",
+          "inverse-surface": "#e5e1e4",
+          "error-container": "#93000a",
+          "outline": "#8e9193",
+          "secondary-fixed-dim": "#c6c5cf",
+          "tertiary-fixed": "#e4e1e5",
+          "on-primary-fixed-variant": "#454748",
+          "tertiary": "#ffffff",
+          "surface-tint": "#c6c6c7",
+          "on-tertiary": "#303033"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "space-xl": "2rem",
+          "space-md": "0.75rem",
+          "space-xs": "0.25rem",
+          "margin-mobile": "1rem",
+          "gutter-mobile": "0.75rem",
+          "gutter": "1rem",
+          "space-sm": "0.5rem",
+          "space-lg": "1.25rem",
+          "margin": "2rem"
+        },
+        "fontFamily": {
+          "headline-lg-mobile": [
+            "JetBrains Mono"
+          ],
+          "label-sm": [
+            "JetBrains Mono"
+          ],
+          "headline-lg": [
+            "JetBrains Mono"
+          ],
+          "label-lg": [
+            "JetBrains Mono"
+          ],
+          "label-md": [
+            "JetBrains Mono"
+          ],
+          "body-sm": [
+            "Geist"
+          ],
+          "headline-sm": [
+            "JetBrains Mono"
+          ],
+          "headline-md": [
+            "JetBrains Mono"
+          ],
+          "body-lg": [
+            "Geist"
+          ],
+          "body-md": [
+            "Geist"
+          ]
+        },
+        "fontSize": {
+          "headline-lg-mobile": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-sm": [
+            "10px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.04em",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-lg": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.04em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-lg": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "500"
+            }
+          ],
+          "label-md": [
+            "11px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.02em",
+              "fontWeight": "500"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "18px",
+              "letterSpacing": "0em",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-sm": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-md": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-lg": [
+            "15px",
+            {
+              "lineHeight": "24px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "400"
+            }
+          ],
+          "body-md": [
+            "13px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "0em",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-background font-body-md text-on-surface min-h-screen flex flex-col selection:bg-surface-container-highest selection:text-primary"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl border-b border-surface-container-high"><div class="h-14 max-w-7xl mx-auto px-margin-mobile md:px-margin flex items-center justify-between"><div class="flex items-center gap-space-md"><img alt="sendTemp Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UduEVy3FjmxPbnfldMsLcOd6OQcsNmHbgKuvbBMVsSdGPzpx_IZZW5xXEWR9EXhsrU4yP1BVPokgLyD7F2YGHDTGB8RY5ssu8V7OcJ46sXn-68RKvucBDyqCcayAW2jd9LVVtyJrfV5gLH3Am1l4auim9E-ONI0yTPdOH84Npt5jWnR6L8VdHo4beMGSWSMxcBy59rYsdO3hdz688aXruo2IBAjgf26tfgsPB-NQ_a-_R_MRlam1q4vg8"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-semibold">sendTemp</span></div></div></header><main class="w-full pt-14 flex-1 bg-background"><div class="flex flex-col w-full">
+<!-- Sub-Header & Status Strip -->
+
+<!-- Dual Workspace: Send Panel & Receive Panel -->
+<section class="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin py-space-lg">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+<!-- LEFT: SEND PANEL -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col justify-between shadow-xl relative overflow-hidden">
+<div class="flex flex-col gap-space-md">
+<!-- Top Bar & State Simulator Switcher -->
+<div class="flex flex-wrap items-center justify-between gap-space-xs pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary uppercase font-bold tracking-wider">SEND</span>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container-highest text-primary">
+                Max 100 MB
+              </span>
+</div>
+<!-- Interactive Switcher -->
+<div class="flex items-center bg-surface-container-lowest p-0.5 rounded gap-0.5" id="send-state-toggles">
+<button class="send-toggle-btn px-2 py-1 font-label-sm text-label-sm rounded bg-surface-container-high text-primary" data-state="default" onclick="setSendState('default')" type="button">Drop</button>
+<button class="send-toggle-btn px-2 py-1 font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" data-state="selected" onclick="setSendState('selected')" type="button">Selected</button>
+<button class="send-toggle-btn px-2 py-1 font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" data-state="uploading" onclick="setSendState('uploading')" type="button">Uploading</button>
+<button class="send-toggle-btn px-2 py-1 font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" data-state="ready" onclick="setSendState('ready')" type="button">Ready ✓</button>
+</div>
+</div>
+<!-- SEND STATE 1: DEFAULT / DROP -->
+<div class="send-view flex flex-col gap-space-md" id="send-view-default">
+<div>
+<p class="font-headline-sm text-headline-sm text-primary font-semibold">Share a file</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Encrypted in-memory transfer with instant auto-purge.</p>
+</div>
+<!-- Drop Zone Area -->
+<div class="cursor-pointer group flex flex-col items-center justify-center p-8 md:p-12 rounded-lg bg-surface-container hover:bg-surface-container-high transition-all text-center gap-space-sm relative" onclick="setSendState('selected')">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">upload_file</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<p class="font-headline-sm text-headline-sm text-primary font-medium">Drop your file here</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">or click to browse from system</p>
+</div>
+<button class="mt-space-xs font-label-md text-label-md px-space-md py-1.5 rounded bg-surface-container-highest hover:bg-surface-bright text-primary flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[14px]">add</span>
+<span class="">Choose File</span>
+</button>
+<input class="hidden" id="send-file-input" onchange="setSendState('selected')" type="file">
+</div>
+<!-- Feature Checklist Footer -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-xs pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<div class="p-space-xs bg-surface-container-lowest rounded flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[14px]">check_circle</span>
+<span class="">Max: 100 MB</span>
+</div>
+<div class="p-space-xs bg-surface-container-lowest rounded flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[14px]">check_circle</span>
+<span class="">No registration</span>
+</div>
+<div class="p-space-xs bg-surface-container-lowest rounded flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[14px]">check_circle</span>
+<span class="">Auto-expiring RAM</span>
+</div>
+</div>
+</div>
+<!-- SEND STATE 2: FILE SELECTED -->
+<div class="send-view hidden flex-col gap-space-md" id="send-view-selected">
+<div>
+<p class="font-headline-sm text-headline-sm text-primary font-semibold">Configure file dispatch</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Set recipient permission and auto-destruct window.</p>
+</div>
+<!-- Staged File Card -->
+<div class="flex items-center justify-between p-space-md bg-surface-container rounded-lg">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">description</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg text-primary font-semibold truncate">resume.pdf</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">24.6 MB • application/pdf</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs flex-shrink-0">
+<button class="font-label-sm text-label-sm px-space-sm py-1 rounded bg-surface-container-highest hover:bg-surface-bright text-on-surface transition-colors" onclick="setSendState('default')" type="button">
+                  Change File
+                </button>
+<button class="font-label-sm text-label-sm p-1 rounded hover:bg-surface-container-highest text-error transition-colors" onclick="setSendState('default')" title="Remove" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+<!-- Recipient Scope Toggles -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-semibold">Who can download?</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<!-- Option 1: Single -->
+<div class="cursor-pointer p-space-sm rounded-lg bg-surface-container-high text-primary flex flex-col gap-1 transition-all" id="recipient-single-card" onclick="selectRecipientMode('single')">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">lock_person</span>
+                      Single Person
+                    </span>
+<span class="material-symbols-outlined text-[16px] text-primary" id="recipient-single-badge">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Destructs after 1 download.</p>
+</div>
+<!-- Option 2: Multiple -->
+<div class="cursor-pointer p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant flex flex-col gap-1 transition-all" id="recipient-multi-card" onclick="selectRecipientMode('multi')">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg font-semibold flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px]">group</span>
+                      Multiple People
+                    </span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant opacity-20" id="recipient-multi-badge">circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Valid until expiration timer.</p>
+</div>
+</div>
+</div>
+<!-- Expiration Grid -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-semibold">Available for</span>
+<span class="font-label-sm text-label-sm text-primary">Auto-destruct timer</span>
+</div>
+<div class="grid grid-cols-3 sm:grid-cols-6 gap-1.5" id="expiry-pills-group">
+<button class="expiry-pill px-2 py-1.5 rounded font-label-sm text-label-sm bg-primary text-on-primary font-semibold text-center" onclick="selectExpiry(this)" type="button">10 min</button>
+<button class="expiry-pill px-2 py-1.5 rounded font-label-sm text-label-sm bg-surface-container hover:bg-surface-container-highest text-on-surface text-center" onclick="selectExpiry(this)" type="button">30 min</button>
+<button class="expiry-pill px-2 py-1.5 rounded font-label-sm text-label-sm bg-surface-container hover:bg-surface-container-highest text-on-surface text-center" onclick="selectExpiry(this)" type="button">1 hour</button>
+<button class="expiry-pill px-2 py-1.5 rounded font-label-sm text-label-sm bg-surface-container hover:bg-surface-container-highest text-on-surface text-center" onclick="selectExpiry(this)" type="button">2 hours</button>
+<button class="expiry-pill px-2 py-1.5 rounded font-label-sm text-label-sm bg-surface-container hover:bg-surface-container-highest text-on-surface text-center" onclick="selectExpiry(this)" type="button">6 hours</button>
+<button class="expiry-pill px-2 py-1.5 rounded font-label-sm text-label-sm bg-surface-container hover:bg-surface-container-highest text-on-surface text-center" onclick="selectExpiry(this)" type="button">12 hours</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Your file will be automatically removed after expiry.</p>
+</div>
+<button class="w-full py-space-sm px-space-md rounded-lg bg-primary hover:opacity-90 text-on-primary font-headline-sm text-headline-sm font-semibold flex items-center justify-center gap-space-xs transition-transform active:scale-[0.99] shadow-md" onclick="setSendState('uploading')" type="button">
+<span class="">Send File</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+<!-- SEND STATE 3: UPLOADING PROGRESS -->
+<div class="send-view hidden flex-col gap-space-md" id="send-view-uploading">
+<div>
+<div class="flex items-center justify-between">
+<p class="font-headline-sm text-headline-sm text-primary font-semibold flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+                  Uploading...
+                </p>
+<span class="font-label-md text-label-md px-space-xs py-0.5 rounded bg-surface-container-highest text-primary">AES-GCM Stream</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant mt-0.5">resume.pdf • 24.6 MB</p>
+</div>
+<!-- Progress Module -->
+<div class="p-space-md bg-surface-container rounded-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-primary font-semibold">68%</span>
+<span class="text-on-surface-variant">16.7 MB / 24.6 MB</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-2.5 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-primary transition-all duration-300 rounded-full" style="width: 68%;"></div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pt-1 font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">speed</span>
+<span class="">Speed: 4.2 MB/s</span>
+</div>
+<div class="flex items-center justify-end gap-1.5">
+<span class="material-symbols-outlined text-[14px]">timelapse</span>
+<span class="">4 seconds remaining</span>
+</div>
+</div>
+</div>
+<!-- Safe-to-close Reassurance Notice -->
+<div class="p-space-md rounded-lg bg-surface-container-high flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5 flex-shrink-0">verified</span>
+<div class="flex flex-col gap-0.5">
+<p class="font-label-md text-label-md text-primary font-semibold">Sender invariant</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Safe to close window once uploaded. File streams directly from ephemeral RAM.</p>
+</div>
+</div>
+<div class="flex gap-space-sm">
+<button class="flex-1 py-space-sm rounded bg-surface-container-highest hover:bg-surface-bright text-primary font-label-md text-label-md" onclick="setSendState('ready')" type="button">
+                Simulate Completion (100%)
+              </button>
+<button class="px-space-md py-space-sm rounded bg-surface-container hover:bg-surface-container-high text-error font-label-md text-label-md" onclick="setSendState('default')" type="button">
+                Cancel
+              </button>
+</div>
+</div>
+<!-- SEND STATE 4: FILE READY (TERMINAL CODE GENERATED) -->
+<div class="send-view hidden flex-col gap-space-md" id="send-view-ready">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<p class="font-headline-sm text-headline-sm text-primary font-semibold">File ready ✓</p>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-highest text-primary">Status: Sealed</span>
+</div>
+<!-- Monospaced Code Card -->
+<div class="p-6 bg-surface-container rounded-lg flex flex-col items-center justify-center gap-space-sm text-center relative overflow-hidden">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant font-semibold">One-Time Sharing Code</span>
+<div class="font-headline-lg text-headline-lg tracking-widest font-bold text-primary select-all py-1 px-4 rounded bg-surface-container-lowest shadow-inner">
+                482 - 731
+              </div>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-primary text-[14px] animate-pulse">timer</span>
+<span class="font-label-md text-label-md text-on-surface-variant" id="send-countdown">Expires in 05:23</span>
+</div>
+</div>
+<!-- Quick Action Triggers -->
+<div class="grid grid-cols-2 gap-space-sm">
+<button class="py-space-sm px-space-md rounded bg-primary hover:opacity-90 text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 transition-all" onclick="copyCode('482731', this)" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span class="">Copy Code</span>
+</button>
+<button class="py-space-sm px-space-md rounded bg-surface-container-highest hover:bg-surface-bright text-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 transition-all" onclick="copyLink(this)" type="button">
+<span class="material-symbols-outlined text-[16px]">link</span>
+<span class="">Copy Link</span>
+</button>
+</div>
+<!-- Policy details & Reset -->
+<div class="p-space-sm rounded bg-surface-container-lowest flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">lock</span>
+<span id="ready-policy-label" class="">One recipient can download this file.</span>
+</span>
+<span class="text-secondary">Single-use</span>
+</div>
+<button class="w-full py-2 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-colors flex items-center justify-center gap-1" onclick="setSendState('default')" type="button">
+<span class="material-symbols-outlined text-[14px]">refresh</span>
+<span class="">Send Another File</span>
+</button>
+</div>
+</div>
+<div class="pt-space-md mt-space-md bg-transparent flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="">sendTemp Payload Gateway</span>
+<span class="">Zero-retention node</span>
+</div>
+</div>
+<!-- RIGHT: RECEIVE PANEL -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col justify-between shadow-xl relative overflow-hidden">
+<div class="flex flex-col gap-space-md">
+<!-- Top Bar & State Simulator Switcher -->
+<div class="flex flex-wrap items-center justify-between gap-space-xs pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary uppercase font-bold tracking-wider">RECEIVE</span>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container-highest text-primary">
+                Instant Fetch
+              </span>
+</div>
+<!-- Interactive Switcher for Receiver Scenarios -->
+<div class="flex flex-wrap items-center bg-surface-container-lowest p-0.5 rounded gap-0.5" id="receive-state-toggles"><button class="receive-toggle-btn px-2 py-1 font-label-sm text-label-sm rounded bg-surface-container-high text-primary" data-state="default" onclick="setReceiveState('default')" type="button">Enter Code</button></div>
+</div>
+<!-- RECEIVE STATE 1: DEFAULT (ENTER CODE) -->
+<div class="recv-view flex flex-col gap-space-md" id="recv-view-default">
+<div>
+<p class="font-headline-sm text-headline-sm text-primary font-semibold">Have a sharing code?</p>
+
+</div>
+<!-- Code Input Form -->
+<div class="flex flex-col gap-space-sm">
+<div class="relative flex items-center">
+<span class="absolute left-4 font-headline-md text-headline-md text-outline select-none font-bold">#</span>
+<input class="w-full bg-surface-container py-4 pl-10 pr-12 rounded-lg font-headline-md text-headline-md tracking-wider text-primary focus:outline-none focus:bg-surface-container-high transition-all" id="receive-code-input" maxlength="9" onkeyup="handleCodeFormat(this)" placeholder="— — —  — — —" type="text" value="">
+<button class="absolute right-3 p-1 rounded hover:bg-surface-container-highest text-on-surface-variant hover:text-primary" onclick="clearReceiveCode()" type="button">
+<span class="material-symbols-outlined text-[18px]">backspace</span>
+</button>
+</div>
+<button class="w-full py-space-sm px-space-md rounded-lg bg-primary hover:opacity-90 text-on-primary font-headline-sm text-headline-sm font-semibold flex items-center justify-center gap-space-xs transition-transform active:scale-[0.99] shadow-md" onclick="setReceiveState('found')" type="button">
+<span class="material-symbols-outlined text-[18px]">cloud_download</span>
+<span class="">Receive File</span>
+</button>
+</div>
+<!-- Trust microcopy -->
+
+</div>
+<!-- RECEIVE STATE 2: FILE FOUND -->
+<div class="recv-view hidden flex-col gap-space-md" id="recv-view-found">
+<div class="flex items-center justify-between">
+<div>
+<p class="font-headline-sm text-headline-sm text-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+                  File ready
+                </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Encrypted payload validated and ready for transfer.</p>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-highest text-primary">SHA-256 Validated</span>
+</div>
+<!-- File Details Card -->
+<div class="p-space-md bg-surface-container rounded-lg flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">slideshow</span>
+</div>
+<div class="min-w-0">
+<p class="font-headline-sm text-headline-sm text-primary font-semibold truncate">presentation.pdf</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">PDF Document • 48.2 MB</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+<span class="">Expires in 08:31</span>
+</div>
+<div class="flex items-center gap-1.5 justify-end">
+<span class="material-symbols-outlined text-[14px]">groups</span>
+<span class="">Multiple downloads allowed</span>
+</div>
+</div>
+</div>
+<!-- Direct Download Button -->
+<button class="w-full py-space-sm px-space-md rounded-lg bg-primary hover:opacity-90 text-on-primary font-headline-sm text-headline-sm font-semibold flex items-center justify-center gap-space-xs transition-transform active:scale-[0.99] shadow-md" onclick="setReceiveState('downloading')" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span class="">Download File</span>
+</button>
+<button class="py-1 text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center justify-center gap-1" onclick="setReceiveState('default')" type="button">
+<span class="">Back to Code Entry</span>
+</button>
+</div>
+<!-- RECEIVE STATE 3: DOWNLOADING PROGRESS -->
+<div class="recv-view hidden flex-col gap-space-md" id="recv-view-downloading">
+<div>
+<div class="flex items-center justify-between">
+<p class="font-headline-sm text-headline-sm text-primary font-semibold flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                  Downloading...
+                </p>
+<span class="font-label-md text-label-md text-on-surface-variant">Streaming buffer</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant mt-0.5">presentation.pdf</p>
+</div>
+<!-- Download Meter -->
+<div class="p-space-md bg-surface-container rounded-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-primary font-semibold">63%</span>
+<span class="text-on-surface-variant">30.4 MB / 48.2 MB</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-primary transition-all duration-300 rounded-full" style="width: 63%;"></div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pt-1 font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">speed</span>
+<span class="">Speed: 8.9 MB/s</span>
+</div>
+<div class="flex items-center justify-end gap-1.5">
+<span class="material-symbols-outlined text-[14px]">timelapse</span>
+<span class="">12 seconds remaining</span>
+</div>
+</div>
+</div>
+<!-- Actions to test interrupted or finish -->
+<div class="flex gap-space-sm">
+<button class="flex-1 py-space-sm rounded bg-surface-container-highest hover:bg-surface-bright text-primary font-label-md text-label-md" onclick="setReceiveState('interrupted')" type="button">
+                Simulate Disconnect
+              </button>
+<button class="px-space-md py-space-sm rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md" onclick="setReceiveState('single-used')" type="button">
+                Complete
+              </button>
+</div>
+</div>
+<!-- RECEIVE STATE 4: RESUME DOWNLOAD (INTERRUPTED) -->
+<div class="recv-view hidden flex-col gap-space-md" id="recv-view-interrupted">
+<!-- Warning Banner -->
+<div class="p-space-md rounded-lg bg-surface-container-highest flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5 flex-shrink-0">cloud_off</span>
+<div class="flex flex-col gap-0.5">
+<p class="font-label-lg text-label-lg text-primary font-semibold">Connection interrupted</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Your download was interrupted due to socket timeout.
+                </p>
+</div>
+</div>
+<div class="p-space-md bg-surface-container rounded-lg flex flex-col gap-space-xs font-label-sm text-label-sm">
+<span class="text-on-surface-variant uppercase tracking-wider font-semibold">Progress Preserved</span>
+<p class="font-headline-sm text-headline-sm text-primary font-semibold">30.4 MB / 48.2 MB</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Chunk offsets cached in local memory buffer.</p>
+</div>
+<button class="w-full py-space-sm px-space-md rounded-lg bg-primary hover:opacity-90 text-on-primary font-headline-sm text-headline-sm font-semibold flex items-center justify-center gap-space-xs shadow-md" onclick="setReceiveState('downloading')" type="button">
+<span class="material-symbols-outlined text-[18px]">resume</span>
+<span class="">Resume Download</span>
+</button>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center">
+              Continues byte-stream from 63% without restarting from zero.
+            </p>
+</div>
+<!-- RECEIVE STATE 5: EXPIRED CODE -->
+<div class="recv-view hidden flex-col gap-space-md text-center py-6" id="recv-view-expired">
+<div class="w-14 h-14 mx-auto rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[28px]">event_busy</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-primary font-semibold">File expired</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                This temporary file is no longer available. RAM storage has been automatically cleaned.
+              </p>
+</div>
+<div class="inline-flex mx-auto px-3 py-1 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+              HTTP 410 Gone • Payload Purged
+            </div>
+<button class="mt-2 w-full py-space-sm rounded bg-surface-container-highest hover:bg-surface-bright text-primary font-label-md text-label-md font-semibold" onclick="setReceiveState('default')" type="button">
+              Receive Another File
+            </button>
+</div>
+<!-- RECEIVE STATE 6: INVALID CODE -->
+<div class="recv-view hidden flex-col gap-space-md text-center py-6" id="recv-view-invalid">
+<div class="w-14 h-14 mx-auto rounded-full bg-surface-container-highest flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[28px]">error</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-primary font-semibold">Invalid sharing code</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Check the 6-digit code with the sender and try again.
+              </p>
+</div>
+<button class="mt-2 w-full py-space-sm rounded bg-surface-container-highest hover:bg-surface-bright text-primary font-label-md text-label-md font-semibold" onclick="setReceiveState('default')" type="button">
+              Try Again
+            </button>
+</div>
+<!-- RECEIVE STATE 7: SINGLE DOWNLOAD COMPLETED -->
+<div class="recv-view hidden flex-col gap-space-md text-center py-6" id="recv-view-single-used">
+<div class="w-14 h-14 mx-auto rounded-full bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]">task_alt</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-primary font-semibold">Download completed</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                This file was configured for one recipient and is no longer available. All traces wiped.
+              </p>
+</div>
+<button class="mt-2 w-full py-space-sm rounded bg-surface-container-highest hover:bg-surface-bright text-primary font-label-md text-label-md font-semibold" onclick="setReceiveState('default')" type="button">
+              Receive Another File
+            </button>
+</div>
+</div>
+<div class="pt-space-md mt-space-md bg-transparent flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="">sendTemp Protocol Stream</span>
+<span class="">Zero-trace egress</span>
+</div>
+</div>
+</div>
+</section>
+<!-- HOW IT WORKS SECTION -->
+
+<!-- Interactive Simulator Runtime -->
+<script>
+    // SEND STATE CONTROLLER
+    function setSendState(stateName) {
+      // Hide all views
+      document.querySelectorAll('.send-view').forEach(el => {
+        el.classList.add('hidden');
+        el.classList.remove('flex');
+      });
+      // Show targeted view
+      const target = document.getElementById('send-view-' + stateName);
+      if (target) {
+        target.classList.remove('hidden');
+        target.classList.add('flex');
+      }
+
+      // Update switcher buttons
+      document.querySelectorAll('#send-state-toggles .send-toggle-btn').forEach(btn => {
+        if (btn.dataset.state === stateName) {
+          btn.classList.add('bg-surface-container-high', 'text-primary');
+          btn.classList.remove('text-on-surface-variant');
+        } else {
+          btn.classList.remove('bg-surface-container-high', 'text-primary');
+          btn.classList.add('text-on-surface-variant');
+        }
+      });
+    }
+
+    // RECEIVE STATE CONTROLLER
+    function setReceiveState(stateName) {
+      document.querySelectorAll('.recv-view').forEach(el => {
+        el.classList.add('hidden');
+        el.classList.remove('flex');
+      });
+      const target = document.getElementById('recv-view-' + stateName);
+      if (target) {
+        target.classList.remove('hidden');
+        target.classList.add('flex');
+      }
+
+      document.querySelectorAll('#receive-state-toggles .receive-toggle-btn').forEach(btn => {
+        if (btn.dataset.state === stateName) {
+          btn.classList.add('bg-surface-container-high', 'text-primary');
+          btn.classList.remove('text-on-surface-variant');
+        } else {
+          btn.classList.remove('bg-surface-container-high', 'text-primary');
+          btn.classList.add('text-on-surface-variant');
+        }
+      });
+    }
+
+    // RECIPIENT TOGGLE (Single vs Multi)
+    let currentRecipientMode = 'single';
+    function selectRecipientMode(mode) {
+      currentRecipientMode = mode;
+      const singleCard = document.getElementById('recipient-single-card');
+      const multiCard = document.getElementById('recipient-multi-card');
+      const singleBadge = document.getElementById('recipient-single-badge');
+      const multiBadge = document.getElementById('recipient-multi-badge');
+      const readyLabel = document.getElementById('ready-policy-label');
+
+      if (mode === 'single') {
+        singleCard.className = 'cursor-pointer p-space-sm rounded-lg bg-surface-container-high text-primary flex flex-col gap-1 transition-all';
+        multiCard.className = 'cursor-pointer p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant flex flex-col gap-1 transition-all';
+        singleBadge.textContent = 'check_circle';
+        singleBadge.classList.replace('opacity-20', 'text-primary');
+        multiBadge.textContent = 'circle';
+        multiBadge.classList.add('opacity-20');
+        if (readyLabel) readyLabel.textContent = 'One recipient can download this file.';
+      } else {
+        multiCard.className = 'cursor-pointer p-space-sm rounded-lg bg-surface-container-high text-primary flex flex-col gap-1 transition-all';
+        singleCard.className = 'cursor-pointer p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant flex flex-col gap-1 transition-all';
+        multiBadge.textContent = 'check_circle';
+        multiBadge.classList.remove('opacity-20');
+        singleBadge.textContent = 'circle';
+        singleBadge.classList.add('opacity-20');
+        if (readyLabel) readyLabel.textContent = 'Anyone with the code can download until expiry.';
+      }
+    }
+
+    // EXPIRATION PILLS TOGGLE
+    function selectExpiry(buttonElement) {
+      document.querySelectorAll('.expiry-pill').forEach(btn => {
+        btn.className = 'expiry-pill px-2 py-1.5 rounded font-label-sm text-label-sm bg-surface-container hover:bg-surface-container-highest text-on-surface text-center transition-colors';
+      });
+      buttonElement.className = 'expiry-pill px-2 py-1.5 rounded font-label-sm text-label-sm bg-primary text-on-primary font-semibold text-center transition-colors';
+    }
+
+    // CODE INPUT AUTO-DASHING
+    function handleCodeFormat(input) {
+      let raw = input.value.replace(/\D/g, '').slice(0, 6);
+      if (raw.length > 3) {
+        input.value = raw.slice(0, 3) + ' - ' + raw.slice(3);
+      } else {
+        input.value = raw;
+      }
+    }
+
+    function clearReceiveCode() {
+      const input = document.getElementById('receive-code-input');
+      if (input) {
+        input.value = '';
+        input.focus();
+      }
+    }
+
+    // COPY CLIPBOARD HELPERS
+    function copyCode(code, btn) {
+      navigator.clipboard?.writeText(code);
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">done</span><span>Copied!</span>';
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+      }, 1800);
+    }
+
+    function copyLink(btn) {
+      const url = window.location.origin + '/#receive/482731';
+      navigator.clipboard?.writeText(url);
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">done</span><span>Link Copied!</span>';
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+      }, 1800);
+    }
+
+    // REAL-TIME COUNTDOWN EMULATION
+    let remainingSec = 582;
+    setInterval(() => {
+      if (remainingSec > 0) {
+        remainingSec--;
+        const mins = Math.floor(remainingSec / 60).toString().padStart(2, '0');
+        const secs = (remainingSec % 60).toString().padStart(2, '0');
+        const timerEl = document.getElementById('send-countdown');
+        if (timerEl) {
+          timerEl.textContent = 'Expires in ' + mins + ':' + secs;
+        }
+      }
+    }, 1000);
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-surface-container-high py-space-md"><div class="max-w-7xl mx-auto px-margin-mobile md:px-margin flex items-center justify-center font-label-sm text-label-sm text-on-surface-variant"><span class="text-center">sendTemp • Created for personal work</span></div></footer>
+
+
+
+</body></html>

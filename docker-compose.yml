@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database Instance
+  postgres:
+    image: postgres:16-alpine
+    container_name: sendtemp-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespassword
+      POSTGRES_DB: sendtemp
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d sendtemp"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # SendTemp Backend API Service
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: sendtemp-server
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      PORT: 8080
+      NODE_ENV: production
+      DATABASE_URL: "postgresql://postgres:postgrespassword@postgres:5432/sendtemp?schema=public"
+      STORAGE_PROVIDER: local
+      STORAGE_PATH: "/app/tmp/sendtemp-storage"
+      MAX_FILE_SIZE_MB: 100
+      CORS_ORIGIN: "*"
+    ports:
+      - "8080:8080"
+    volumes:
+      - storage_data:/app/tmp/sendtemp-storage
+
+  # SendTemp Frontend Web Client
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: sendtemp-client
+    restart: unless-stopped
+    depends_on:
+      - server
+    ports:
+      - "3000:80"
+
+volumes:
+  postgres_data:
+    driver: local
+  storage_data:
+    driver: local

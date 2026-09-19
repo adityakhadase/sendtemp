@@ -1,0 +1,353 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Geist:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container-high": "#2a2a2c",
+          "on-tertiary-fixed": "#1b1b1e",
+          "on-secondary-container": "#bcbbc5",
+          "primary-fixed": "#e2e2e3",
+          "on-primary-fixed": "#1a1c1d",
+          "surface-dim": "#131315",
+          "on-surface": "#e5e1e4",
+          "on-tertiary-container": "#656467",
+          "secondary-container": "#4a4b53",
+          "on-background": "#e5e1e4",
+          "on-secondary": "#2f3038",
+          "surface-container-lowest": "#0e0e10",
+          "surface": "#131315",
+          "surface-bright": "#39393b",
+          "surface-container-highest": "#353437",
+          "on-primary-container": "#636466",
+          "surface-container": "#201f22",
+          "tertiary-container": "#e4e1e5",
+          "tertiary-fixed-dim": "#c8c6c9",
+          "on-primary": "#2f3132",
+          "error": "#ffb4ab",
+          "background": "#131315",
+          "primary": "#ffffff",
+          "on-surface-variant": "#c4c7c9",
+          "outline-variant": "#444749",
+          "surface-variant": "#353437",
+          "inverse-on-surface": "#313032",
+          "secondary-fixed": "#e3e1ec",
+          "on-error": "#690005",
+          "on-error-container": "#ffdad6",
+          "primary-container": "#e2e2e3",
+          "on-secondary-fixed": "#1a1b22",
+          "secondary": "#c6c5cf",
+          "on-tertiary-fixed-variant": "#47464a",
+          "surface-container-low": "#1c1b1d",
+          "inverse-primary": "#5d5e60",
+          "primary-fixed-dim": "#c6c6c7",
+          "on-secondary-fixed-variant": "#46464e",
+          "inverse-surface": "#e5e1e4",
+          "error-container": "#93000a",
+          "outline": "#8e9193",
+          "secondary-fixed-dim": "#c6c5cf",
+          "tertiary-fixed": "#e4e1e5",
+          "on-primary-fixed-variant": "#454748",
+          "tertiary": "#ffffff",
+          "surface-tint": "#c6c6c7",
+          "on-tertiary": "#303033"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "space-xl": "2rem",
+          "space-md": "0.75rem",
+          "space-xs": "0.25rem",
+          "margin-mobile": "1rem",
+          "gutter-mobile": "0.75rem",
+          "gutter": "1rem",
+          "space-sm": "0.5rem",
+          "space-lg": "1.25rem",
+          "margin": "2rem"
+        },
+        "fontFamily": {
+          "headline-lg-mobile": [
+            "JetBrains Mono"
+          ],
+          "label-sm": [
+            "JetBrains Mono"
+          ],
+          "headline-lg": [
+            "JetBrains Mono"
+          ],
+          "label-lg": [
+            "JetBrains Mono"
+          ],
+          "label-md": [
+            "JetBrains Mono"
+          ],
+          "body-sm": [
+            "Geist"
+          ],
+          "headline-sm": [
+            "JetBrains Mono"
+          ],
+          "headline-md": [
+            "JetBrains Mono"
+          ],
+          "body-lg": [
+            "Geist"
+          ],
+          "body-md": [
+            "Geist"
+          ]
+        },
+        "fontSize": {
+          "headline-lg-mobile": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-sm": [
+            "10px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.04em",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-lg": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.04em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-lg": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "500"
+            }
+          ],
+          "label-md": [
+            "11px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.02em",
+              "fontWeight": "500"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "18px",
+              "letterSpacing": "0em",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-sm": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-md": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-lg": [
+            "15px",
+            {
+              "lineHeight": "24px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "400"
+            }
+          ],
+          "body-md": [
+            "13px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "0em",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-background font-body-md text-on-surface min-h-screen flex flex-col selection:bg-surface-container-highest selection:text-primary"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl border-b border-surface-container-high"><div class="h-12 max-w-7xl mx-auto px-margin-mobile md:px-margin flex items-center justify-between"><div class="flex items-center gap-2"><img alt="sendTemp Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UduEVy3FjmxPbnfldMsLcOd6OQcsNmHbgKuvbBMVsSdGPzpx_IZZW5xXEWR9EXhsrU4yP1BVPokgLyD7F2YGHDTGB8RY5ssu8V7OcJ46sXn-68RKvucBDyqCcayAW2jd9LVVtyJrfV5gLH3Am1l4auim9E-ONI0yTPdOH84Npt5jWnR6L8VdHo4beMGSWSMxcBy59rYsdO3hdz688aXruo2IBAjgf26tfgsPB-NQ_a-_R_MRlam1q4vg8"><span class="font-headline-sm text-sm text-primary tracking-tight font-semibold">sendTemp</span><span class="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-[10px] border border-outline-variant/40">v1.0 • zero-retention</span></div><div class="flex items-center gap-2"><div class="hidden md:flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-lowest border border-outline-variant/60 text-secondary font-label-sm text-[11px]"><span class="text-outline">$</span><span class="">sendtemp --help</span></div></div></div></header><main class="w-full flex-1 bg-background pt-12"><div class="flex flex-col w-full px-margin-mobile pb-8 pt-2.5 max-w-md mx-auto"><div class="w-full bg-surface-container-lowest p-1.5 rounded-lg mb-3 flex items-center justify-between overflow-x-auto"><span class="font-label-sm text-[10px] text-on-surface-variant px-1 whitespace-nowrap">SIMULATE:</span><div class="flex gap-1"><button class="font-label-sm text-[11px] px-2 py-1 rounded bg-surface-container-highest text-primary transition-all active:scale-95" id="tab-idle" onclick="setSendState('idle')" type="button">Idle</button><button class="font-label-sm text-[11px] px-2 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface transition-all active:scale-95" id="tab-uploading" onclick="setSendState('uploading')" type="button">Sending</button><button class="font-label-sm text-[11px] px-2 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface transition-all active:scale-95" id="tab-ready" onclick="setSendState('ready')" type="button">Ready</button><button class="font-label-sm text-[11px] px-2 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface transition-all active:scale-95" id="tab-recv" onclick="setReceiveState('active')" type="button">Receive DL</button></div></div><div class="flex flex-col gap-3 w-full"><div class="w-full bg-surface-container-low rounded-lg p-3 shadow-md flex flex-col gap-2.5"><div class="flex items-center justify-between pb-1"><div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span><h2 class="font-headline-sm text-[12px] text-primary uppercase tracking-wider font-semibold">01. Send File</h2></div><span class="font-label-sm text-[10px] bg-surface-container-high text-on-surface-variant px-1.5 py-0.5 rounded">AES-256</span></div><div class="flex flex-col gap-2.5" id="send-view-idle"><label class="group relative flex flex-col items-center justify-center p-3 rounded-lg bg-surface-container-lowest active:bg-surface-container-high transition-all cursor-pointer min-h-[96px] text-center border border-outline-variant/40" for="mobile-file-input"><input class="hidden" id="mobile-file-input" onchange="handleFileSelected(this)" type="file"><div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center mb-1 group-active:scale-110 transition-transform"><span class="material-symbols-outlined text-primary text-[18px]">upload_file</span></div><span class="font-label-md text-[12px] text-primary font-medium">Drop file or browse</span><div class="mt-1 inline-flex items-center justify-center px-2 py-1 rounded bg-surface-container-high text-primary font-label-sm text-[11px]">[ Choose File ]</div></label><div class="bg-surface-container p-2.5 rounded-lg flex items-center justify-between" id="staged-file-card"><div class="flex items-center gap-2 min-w-0"><div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-primary text-[18px]">description</span></div><div class="min-w-0 flex flex-col"><span class="font-label-md text-[12px] text-primary truncate font-semibold" id="staged-filename">resume_candidate_v2.pdf</span><span class="font-label-sm text-[10px] text-on-surface-variant" id="staged-filesize">24.6 MB • ready to stream</span></div></div><button aria-label="Remove file" class="p-1 text-on-surface-variant hover:text-error transition-colors shrink-0 active:scale-90" onclick="clearStagedFile()" type="button"><span class="material-symbols-outlined text-[16px]">close</span></button></div><div class="flex flex-col gap-1"><div class="flex items-center justify-between"><span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider">Time To Live (TTL)</span><span class="font-label-sm text-[10px] text-secondary" id="ttl-active-label">10 Minutes</span></div><div class="grid grid-cols-2 gap-1.5"><button class="ttl-chip h-9 rounded bg-primary text-on-primary font-label-sm text-[11px] font-medium transition-all active:scale-98 flex items-center justify-center" onclick="selectTTL(this, '10 min (Default)')" type="button">10 min (Default)</button><button class="ttl-chip h-9 rounded bg-surface-container-high text-on-surface font-label-sm text-[11px] font-medium transition-all active:scale-98 flex items-center justify-center" onclick="selectTTL(this, '30 min')" type="button">30 min</button><button class="ttl-chip h-9 rounded bg-surface-container-high text-on-surface font-label-sm text-[11px] font-medium transition-all active:scale-98 flex items-center justify-center" onclick="selectTTL(this, '1 hour')" type="button">1 hour</button><button class="ttl-chip h-9 rounded bg-surface-container-high text-on-surface font-label-sm text-[11px] font-medium transition-all active:scale-98 flex items-center justify-center" onclick="selectTTL(this, '6 hours')" type="button">6 hours</button></div></div><div class="flex flex-col gap-1"><span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider">Access Policy</span><div class="grid grid-cols-2 gap-1.5 p-1 bg-surface-container-lowest rounded-lg"><button class="h-8 rounded bg-surface-container-highest text-primary font-label-sm text-[11px] flex items-center justify-center gap-1 transition-all" id="policy-single" onclick="setPolicy('single')" type="button"><span class="material-symbols-outlined text-[14px]">lock_person</span><span class="">Single Person</span></button><button class="h-8 rounded bg-transparent text-on-surface-variant font-label-sm text-[11px] flex items-center justify-center gap-1 transition-all" id="policy-multi" onclick="setPolicy('multi')" type="button"><span class="material-symbols-outlined text-[14px]">group</span><span class="">Multiple People</span></button></div><p class="font-body-sm text-[10px] text-on-surface-variant/80 px-0.5" id="policy-caption">File self-destructs immediately after 1st successful download.</p></div><button class="w-full h-10 rounded-lg bg-primary text-on-primary font-label-md text-[13px] font-semibold flex items-center justify-center gap-1.5 active:scale-98 shadow mt-0.5 transition-transform" onclick="startSendingSimulation()" type="button"><span class="material-symbols-outlined text-[17px]">bolt</span><span class="">Send File</span></button></div><div class="hidden flex-col gap-2 py-2" id="send-view-uploading"><div class="flex items-center justify-between"><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary animate-spin text-[16px]">progress_activity</span><span class="font-label-md text-[12px] text-primary">Encrypting &amp; Storing...</span></div><span class="font-headline-sm text-[13px] text-primary font-mono" id="upload-pct">68%</span></div><div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden"><div class="bg-primary h-full transition-all duration-300" id="upload-bar" style="width: 68%;"></div></div><div class="flex justify-between font-label-sm text-[10px] text-on-surface-variant"><span class="">16.7 MB / 24.6 MB</span><span class="">5.2 MB/s • 00:02s left</span></div><div class="p-2 bg-surface-container-lowest rounded font-label-sm text-[10px] text-on-surface-variant flex items-center gap-1.5"><span class="material-symbols-outlined text-[15px] text-primary">memory</span><span class="">Writing to RAM buffer • Ephemeral cache</span></div></div><div class="hidden flex-col gap-2.5" id="send-view-ready"><div class="bg-surface-container-lowest p-2.5 rounded-lg flex flex-col items-center justify-center gap-1 text-center"><span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest">Share this 6-Digit Code</span><div class="my-1 py-1.5 px-3 rounded-lg bg-surface-container-high w-full flex items-center justify-center"><span class="font-headline-md text-[20px] text-primary tracking-widest font-mono" id="ready-code-text">482 - 731</span></div><span class="font-body-sm text-[11px] text-on-surface-variant">Valid for 10 minutes • Expires on download</span></div><div class="grid grid-cols-2 gap-1.5"><button class="h-9 rounded-lg bg-primary text-on-primary font-label-sm text-[11px] font-semibold flex items-center justify-center gap-1 active:scale-95 transition-all" id="copy-code-btn" onclick="copyCode()" type="button"><span class="material-symbols-outlined text-[15px]">content_copy</span><span id="copy-code-label" class="">Copy Code</span></button><button class="h-9 rounded-lg bg-surface-container-high text-primary font-label-sm text-[11px] font-medium flex items-center justify-center gap-1 active:scale-95 transition-all" onclick="shareNative()" type="button"><span class="material-symbols-outlined text-[15px]">share</span><span class="">Share Link</span></button></div><button class="h-8 text-on-surface-variant font-label-sm text-[11px] hover:text-primary transition-colors flex items-center justify-center gap-1" onclick="resetSendFlow()" type="button"><span class="material-symbols-outlined text-[14px]">restart_alt</span><span class="">Send another file</span></button></div></div><div class="w-full bg-surface-container-low rounded-lg p-3 shadow-md flex flex-col gap-2.5"><div class="flex items-center justify-between pb-1"><div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><h2 class="font-headline-sm text-[12px] text-primary uppercase tracking-wider font-semibold">02. Receive File</h2></div><span class="font-label-sm text-[10px] bg-surface-container-high text-on-surface-variant px-1.5 py-0.5 rounded">Instant Stream</span></div><div class="flex flex-col gap-2"><div class="relative w-full"><input class="w-full h-10 bg-surface-container-lowest text-primary text-center font-headline-sm text-[16px] tracking-widest rounded-lg outline-none focus:bg-surface-container-highest px-3 transition-colors placeholder:text-outline-variant border border-outline-variant/40" id="receive-code-input" inputmode="numeric" maxlength="9" placeholder="--- - ---" type="text"></div><button class="w-full h-10 rounded-lg bg-surface-container-highest active:bg-primary active:text-on-primary text-primary font-label-md text-[13px] font-semibold flex items-center justify-center gap-1.5 transition-all active:scale-98 shadow" onclick="triggerReceiveLookup()" type="button"><span class="material-symbols-outlined text-[17px]">cloud_download</span><span class="">Receive File</span></button></div><div class="bg-surface-container p-2.5 rounded-lg flex flex-col gap-2" id="receive-preview-card"><div class="flex items-center justify-between"><div class="flex items-center gap-2 min-w-0"><div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-primary text-[18px]">inventory_2</span></div><div class="min-w-0 flex flex-col"><span class="font-label-md text-[12px] text-primary truncate font-semibold">client_deliverable_pack.tar.gz</span><span class="font-label-sm text-[10px] text-on-surface-variant">54.1 MB • Ephemeral RAM Buffer</span></div></div><span class="font-label-sm text-[10px] bg-surface-container-high text-primary px-1.5 py-0.5 rounded shrink-0">Live</span></div><div class="flex flex-col gap-1 pt-0.5" id="recv-stream-box"><div class="flex items-center justify-between font-label-sm text-[10px]"><span class="text-on-surface-variant">Resumable stream</span><span class="text-primary font-mono" id="recv-pct-label">100% Verified</span></div><div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden"><div class="bg-primary h-full w-full" id="recv-stream-bar"></div></div><div class="flex justify-between font-label-sm text-[10px] text-on-surface-variant"><span class="">SHA-256: 9b2d...f4e1</span><span class="">Chunk 42/42</span></div></div><button class="w-full h-9 rounded bg-primary text-on-primary font-label-sm text-[11px] font-semibold flex items-center justify-center gap-1.5 active:scale-98 transition-transform mt-0.5" id="download-action-btn" onclick="handleFileDownload()" type="button"><span class="material-symbols-outlined text-[15px]">download</span><span id="download-action-label" class="">Download File</span></button></div></div></div></div>
+<script>
+  function setSendState(state) {
+    const idleView = document.getElementById('send-view-idle');
+    const uploadingView = document.getElementById('send-view-uploading');
+    const readyView = document.getElementById('send-view-ready');
+    
+    // Tab styling reset
+    ['idle', 'uploading', 'ready'].forEach(s => {
+      const btn = document.getElementById('tab-' + s);
+      if (btn) {
+        btn.className = 'font-label-sm text-label-sm px-2.5 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface transition-all active:scale-95';
+      }
+    });
+
+    const activeTab = document.getElementById('tab-' + state);
+    if (activeTab) {
+      activeTab.className = 'font-label-sm text-label-sm px-2.5 py-1.5 rounded-lg bg-surface-container-highest text-primary transition-all active:scale-95';
+    }
+
+    idleView.classList.add('hidden');
+    uploadingView.classList.add('hidden');
+    readyView.classList.add('hidden');
+
+    if (state === 'idle') {
+      idleView.classList.remove('hidden');
+    } else if (state === 'uploading') {
+      uploadingView.classList.remove('hidden');
+    } else if (state === 'ready') {
+      readyView.classList.remove('hidden');
+    }
+  }
+
+  function setReceiveState(state) {
+    const recvTab = document.getElementById('tab-recv');
+    if (recvTab) {
+      recvTab.className = 'font-label-sm text-label-sm px-2.5 py-1.5 rounded-lg bg-surface-container-highest text-primary transition-all active:scale-95';
+    }
+    const downloadLabel = document.getElementById('download-action-label');
+    if (downloadLabel) {
+      downloadLabel.innerText = "Downloaded (Simulated)";
+      setTimeout(() => {
+        downloadLabel.innerText = "Download File";
+      }, 2000);
+    }
+  }
+
+  function selectTTL(btn, label) {
+    document.querySelectorAll('.ttl-chip').forEach(el => {
+      el.className = 'ttl-chip h-12 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md font-medium transition-all active:scale-98 flex items-center justify-center';
+    });
+    btn.className = 'ttl-chip h-12 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-medium transition-all active:scale-98 flex items-center justify-center';
+    document.getElementById('ttl-active-label').innerText = label;
+  }
+
+  function setPolicy(type) {
+    const single = document.getElementById('policy-single');
+    const multi = document.getElementById('policy-multi');
+    const caption = document.getElementById('policy-caption');
+
+    if (type === 'single') {
+      single.className = 'h-11 rounded-lg bg-surface-container-highest text-primary font-label-md text-label-md flex items-center justify-center gap-1.5 transition-all';
+      multi.className = 'h-11 rounded-lg bg-transparent text-on-surface-variant font-label-md text-label-md flex items-center justify-center gap-1.5 transition-all';
+      caption.innerText = 'File self-destructs immediately after 1st successful download.';
+    } else {
+      multi.className = 'h-11 rounded-lg bg-surface-container-highest text-primary font-label-md text-label-md flex items-center justify-center gap-1.5 transition-all';
+      single.className = 'h-11 rounded-lg bg-transparent text-on-surface-variant font-label-md text-label-md flex items-center justify-center gap-1.5 transition-all';
+      caption.innerText = 'File remains accessible to all recipients until the TTL expires.';
+    }
+  }
+
+  function startSendingSimulation() {
+    setSendState('uploading');
+    let progress = 10;
+    const bar = document.getElementById('upload-bar');
+    const pct = document.getElementById('upload-pct');
+    
+    const interval = setInterval(() => {
+      progress += 18;
+      if (progress >= 100) {
+        progress = 100;
+        clearInterval(interval);
+        setTimeout(() => {
+          setSendState('ready');
+        }, 400);
+      }
+      if (bar) bar.style.width = progress + '%';
+      if (pct) pct.innerText = progress + '%';
+    }, 180);
+  }
+
+  function handleFileSelected(input) {
+    if (input.files && input.files[0]) {
+      const file = input.files[0];
+      const name = document.getElementById('staged-filename');
+      const size = document.getElementById('staged-filesize');
+      if (name) name.innerText = file.name;
+      if (size) size.innerText = (file.size / (1024 * 1024)).toFixed(1) + ' MB • staged';
+      const stagedCard = document.getElementById('staged-file-card');
+      if (stagedCard) stagedCard.classList.remove('hidden');
+    }
+  }
+
+  function clearStagedFile() {
+    const stagedCard = document.getElementById('staged-file-card');
+    if (stagedCard) stagedCard.classList.add('hidden');
+    const input = document.getElementById('mobile-file-input');
+    if (input) input.value = '';
+  }
+
+  function resetSendFlow() {
+    const stagedCard = document.getElementById('staged-file-card');
+    if (stagedCard) stagedCard.classList.remove('hidden');
+    setSendState('idle');
+  }
+
+  function copyCode() {
+    const code = document.getElementById('ready-code-text').innerText;
+    navigator.clipboard?.writeText(code);
+    const label = document.getElementById('copy-code-label');
+    if (label) {
+      label.innerText = "Copied!";
+      setTimeout(() => {
+        label.innerText = "Copy Code";
+      }, 1800);
+    }
+  }
+
+  function shareNative() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'sendTemp File',
+        text: 'Download file using ephemeral code: 482 - 731',
+        url: window.location.href,
+      }).catch(() => {});
+    } else {
+      copyCode();
+    }
+  }
+
+  function triggerReceiveLookup() {
+    const input = document.getElementById('receive-code-input');
+    const preview = document.getElementById('receive-preview-card');
+    if (preview) {
+      preview.classList.remove('hidden');
+      preview.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  function handleFileDownload() {
+    const label = document.getElementById('download-action-label');
+    if (label) {
+      label.innerText = "Saving to Device...";
+      setTimeout(() => {
+        label.innerText = "Downloaded ✓";
+        setTimeout(() => {
+          label.innerText = "Download File";
+        }, 2200);
+      }, 1000);
+    }
+  }
+</script></main><footer class="w-full bg-surface-container-lowest border-t border-surface-container-high py-2"><div class="max-w-7xl mx-auto px-margin-mobile md:px-margin flex items-center justify-center font-mono text-label-sm text-on-surface-variant gap-2"><span class="text-primary font-medium">sendTemp</span><span class="text-outline">•</span><span class="">Created for personal work</span></div></footer>
+
+
+
+</body></html>
