@@ -9,6 +9,7 @@ build/
 tmp/
 temp/
 *.tmp
+*.pdf
 
 # Environment Variables & Secrets
 .env

@@ -65,6 +65,27 @@ const createShareSchema = z.object({
     .max(10080, 'ttlMinutes cannot exceed 10080 minutes (7 days)'),
 });
 
+// Helper to generate a collision-resistant 6-digit numeric share code (e.g., "482731")
+async function generate6DigitShareCode(): Promise<string> {
+  for (let attempt = 0; attempt < 10; attempt++) {
+    const candidate = crypto.randomInt(100000, 1000000).toString();
+    const existing = await prisma.share.findUnique({
+      where: { shareCode: candidate },
+      select: { id: true, status: true, expiresAt: true },
+    });
+
+    if (
+      !existing ||
+      existing.status === 'EXPIRED' ||
+      existing.status === 'CONSUMED' ||
+      existing.expiresAt <= new Date()
+    ) {
+      return candidate;
+    }
+  }
+  return crypto.randomInt(100000, 1000000).toString();
+}
+
 /**
  * POST /api/shares
  * Upload file, validate mode & ttlMinutes, stream to storage provider, and record in DB via Prisma transaction.
@@ -112,8 +133,8 @@ router.post(
 
       const { mode, ttlMinutes } = validationResult.data;
 
-      // Generate 12-character secure alphanumeric shareCode
-      const shareCode = nanoid(12);
+      // Generate 6-digit purely numeric secure shareCode
+      const shareCode = await generate6DigitShareCode();
 
       // Generate cryptographically secure UUID for physical storage key (never raw user filename)
       const storageKey = crypto.randomUUID();
@@ -179,10 +200,18 @@ router.post(
  */
 router.get('/:code', shareLookupLimiter, async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {
-    const code = req.params.code as string;
+    const rawCode = req.params.code as string;
+    const cleanDigits = rawCode.replace(/\D/g, '');
+    const code = cleanDigits.length === 6 ? cleanDigits : rawCode;
 
-    const share = await prisma.share.findUnique({
-      where: { shareCode: code },
+    const share = await prisma.share.findFirst({
+      where: {
+        OR: [
+          { shareCode: code },
+          { shareCode: rawCode },
+          { shareCode: cleanDigits },
+        ],
+      },
       include: { file: true },
     });
 
@@ -232,10 +261,18 @@ router.get('/:code', shareLookupLimiter, async (req: Request, res: Response, nex
  */
 router.get('/:code/download', async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {
-    const code = req.params.code as string;
+    const rawCode = req.params.code as string;
+    const cleanDigits = rawCode.replace(/\D/g, '');
+    const code = cleanDigits.length === 6 ? cleanDigits : rawCode;
 
-    const share = await prisma.share.findUnique({
-      where: { shareCode: code },
+    const share = await prisma.share.findFirst({
+      where: {
+        OR: [
+          { shareCode: code },
+          { shareCode: rawCode },
+          { shareCode: cleanDigits },
+        ],
+      },
       include: { file: true },
     });
 
@@ -345,10 +382,18 @@ router.get('/:code/download', async (req: Request, res: Response, next: NextFunc
  */
 router.delete('/:code', async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {
-    const code = req.params.code as string;
+    const rawCode = req.params.code as string;
+    const cleanDigits = rawCode.replace(/\D/g, '');
+    const code = cleanDigits.length === 6 ? cleanDigits : rawCode;
 
-    const share = await prisma.share.findUnique({
-      where: { shareCode: code },
+    const share = await prisma.share.findFirst({
+      where: {
+        OR: [
+          { shareCode: code },
+          { shareCode: rawCode },
+          { shareCode: cleanDigits },
+        ],
+      },
       include: { file: true },
     });
 
