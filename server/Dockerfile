@@ -23,6 +23,9 @@ RUN npm prune --production
 # Stage 2: Production Runtime Stage
 FROM node:22-alpine AS runner
 
+# Install OpenSSL and compatibility libraries required by Prisma engine on Alpine
+RUN apk add --no-cache openssl libc6-compat
+
 WORKDIR /app
 
 ENV NODE_ENV=production
