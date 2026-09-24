@@ -41,7 +41,7 @@ export const FileUpload: React.FC = () => {
     return code;
   };
 
-  // Expiration Countdown Timer for the Sealed card
+  // Expiration Countdown for the Sealed card
   useEffect(() => {
     if (!shareData?.expiresAt) return;
 
@@ -172,48 +172,80 @@ export const FileUpload: React.FC = () => {
   };
 
   return (
-    <div className="bg-surface-container-low rounded-xl p-5 sm:p-7 flex flex-col justify-between shadow-xl relative overflow-hidden border border-outline-variant/30">
+    <div className="bg-white rounded-xl p-5 sm:p-6 flex flex-col justify-between shadow-xs border border-neutral-200/90 h-full">
       <div className="flex flex-col gap-4">
-        {/* Top Bar Header */}
-        <div className="flex flex-wrap items-center justify-between gap-2 pb-2 border-b border-surface-container-high">
+        {/* Top Header Row matching screenshot */}
+        <div className="flex flex-wrap items-center justify-between gap-2 pb-2 border-b border-neutral-100">
           <div className="flex items-center gap-2">
-            <span className="font-mono text-sm sm:text-base text-primary uppercase font-bold tracking-wider">
+            <span className="font-mono text-sm font-bold tracking-wider text-neutral-950">
               SEND
             </span>
-            <span className="font-mono text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-primary font-medium">
+            <span className="font-mono text-[11px] px-2 py-0.5 rounded bg-neutral-100 text-neutral-600 font-medium">
               Max 100 MB
             </span>
           </div>
 
-          <span className="font-mono text-[11px] bg-surface-container text-on-surface-variant px-2 py-0.5 rounded border border-outline-variant/30">
-            RAM Encrypted
-          </span>
+          {/* Simulator status tabs matching screenshot */}
+          <div className="flex items-center gap-1 font-mono text-[11px]">
+            <span
+              className={`px-2 py-0.5 rounded font-medium transition-all ${
+                !file && !isUploading && !shareData
+                  ? 'bg-neutral-950 text-white'
+                  : 'text-neutral-400'
+              }`}
+            >
+              Drop
+            </span>
+            <span
+              className={`px-2 py-0.5 rounded font-medium transition-all ${
+                file && !isUploading && !shareData
+                  ? 'bg-neutral-950 text-white'
+                  : 'text-neutral-400'
+              }`}
+            >
+              Selected
+            </span>
+            <span
+              className={`px-2 py-0.5 rounded font-medium transition-all ${
+                isUploading ? 'bg-neutral-950 text-white' : 'text-neutral-400'
+              }`}
+            >
+              Uploading
+            </span>
+            <span
+              className={`px-2 py-0.5 rounded font-medium transition-all ${
+                shareData ? 'bg-neutral-950 text-white' : 'text-neutral-400'
+              }`}
+            >
+              Ready ✓
+            </span>
+          </div>
         </div>
 
-        {/* Error Alert Banner */}
+        {/* Error Alert */}
         {errorMessage && (
-          <div className="p-3 bg-error-container/30 border border-error/50 rounded-lg text-error text-xs font-mono flex items-center gap-2">
+          <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-xs font-mono flex items-center gap-2">
             <span className="material-symbols-outlined text-sm">error</span>
             <span>{errorMessage}</span>
           </div>
         )}
 
-        {/* STATE 1: DEFAULT / DROP ZONE (NO FILE SELECTED YET) */}
+        {/* STATE 1: DEFAULT / DROP ZONE (MATCHING SCREENSHOT) */}
         {!file && !isUploading && !shareData && (
           <div className="flex flex-col gap-4">
             <div>
-              <p className="font-mono text-base text-primary font-semibold">Share a file</p>
-              <p className="font-sans text-xs text-on-surface-variant">
+              <p className="font-mono text-base font-bold text-neutral-950">Share a file</p>
+              <p className="font-sans text-xs text-neutral-500 mt-0.5">
                 Encrypted in-memory transfer with instant auto-purge.
               </p>
             </div>
 
-            {/* Large Interactive Drop Area */}
+            {/* Drop Zone Box */}
             <div
               onDrop={handleDrop}
               onDragOver={handleDragOver}
               onClick={() => fileInputRef.current?.click()}
-              className="cursor-pointer group flex flex-col items-center justify-center p-8 sm:p-12 rounded-lg bg-surface-container hover:bg-surface-container-high transition-all text-center gap-3 relative border border-dashed border-outline-variant/50 hover:border-primary/50"
+              className="cursor-pointer group flex flex-col items-center justify-center py-10 px-6 rounded-xl bg-[#fafafa] hover:bg-neutral-50 border border-dashed border-neutral-300 hover:border-neutral-400 transition-all text-center gap-2 relative"
             >
               <input
                 ref={fileInputRef}
@@ -221,38 +253,37 @@ export const FileUpload: React.FC = () => {
                 className="hidden"
                 onChange={handleFileChange}
               />
-              <div className="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
-                <span className="material-symbols-outlined text-[24px]">upload_file</span>
+              <div className="w-11 h-11 rounded-lg bg-white border border-neutral-200 flex items-center justify-center text-neutral-900 shadow-2xs group-hover:scale-105 transition-transform">
+                <span className="material-symbols-outlined text-[22px]">description</span>
               </div>
-              <div className="flex flex-col gap-0.5">
-                <p className="font-mono text-sm sm:text-base text-primary font-medium">
-                  Drop your file here
-                </p>
-                <p className="font-sans text-xs text-on-surface-variant">
-                  or click to browse from system
-                </p>
-              </div>
+              <p className="font-mono text-sm font-semibold text-neutral-950 mt-1">
+                Drop your file here
+              </p>
+              <p className="font-sans text-xs text-neutral-500">
+                or click to browse from system
+              </p>
+
               <button
                 type="button"
-                className="mt-1 font-mono text-xs px-4 py-2 rounded bg-surface-container-highest hover:bg-surface-bright text-primary flex items-center gap-1.5 shadow-sm transition-colors"
+                className="mt-2 font-mono text-xs px-4 py-1.5 rounded-lg bg-white hover:bg-neutral-50 border border-neutral-200 text-neutral-900 font-medium shadow-2xs flex items-center gap-1 transition-all"
               >
-                <span className="material-symbols-outlined text-sm">add</span>
+                <span>+</span>
                 <span>Choose File</span>
               </button>
             </div>
 
-            {/* 3 Feature Checklist Pills at Bottom of Dropzone */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1 text-on-surface-variant font-mono text-[11px]">
-              <div className="p-2 bg-surface-container-lowest rounded flex items-center gap-1.5 border border-outline-variant/20">
-                <span className="material-symbols-outlined text-primary text-sm">check_circle</span>
+            {/* 3 Feature Checklist Pills at Bottom */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1 text-neutral-600 font-mono text-[11px]">
+              <div className="p-2 bg-neutral-100/90 rounded-md flex items-center gap-1.5 border border-neutral-200/50">
+                <span className="material-symbols-outlined text-neutral-700 text-sm">check_circle</span>
                 <span>Max: 100 MB</span>
               </div>
-              <div className="p-2 bg-surface-container-lowest rounded flex items-center gap-1.5 border border-outline-variant/20">
-                <span className="material-symbols-outlined text-primary text-sm">check_circle</span>
+              <div className="p-2 bg-neutral-100/90 rounded-md flex items-center gap-1.5 border border-neutral-200/50">
+                <span className="material-symbols-outlined text-neutral-700 text-sm">check_circle</span>
                 <span>No registration</span>
               </div>
-              <div className="p-2 bg-surface-container-lowest rounded flex items-center gap-1.5 border border-outline-variant/20">
-                <span className="material-symbols-outlined text-primary text-sm">check_circle</span>
+              <div className="p-2 bg-neutral-100/90 rounded-md flex items-center gap-1.5 border border-neutral-200/50">
+                <span className="material-symbols-outlined text-neutral-700 text-sm">check_circle</span>
                 <span>Auto-expiring RAM</span>
               </div>
             </div>
@@ -263,25 +294,25 @@ export const FileUpload: React.FC = () => {
         {file && !isUploading && !shareData && (
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div>
-              <p className="font-mono text-base text-primary font-semibold">
+              <p className="font-mono text-base font-bold text-neutral-950">
                 Configure file dispatch
               </p>
-              <p className="font-sans text-xs text-on-surface-variant">
+              <p className="font-sans text-xs text-neutral-500 mt-0.5">
                 Set recipient permission and auto-destruct window.
               </p>
             </div>
 
             {/* Staged File Card */}
-            <div className="flex items-center justify-between p-3.5 bg-surface-container rounded-lg border border-outline-variant/30">
+            <div className="flex items-center justify-between p-3.5 bg-neutral-50 rounded-lg border border-neutral-200">
               <div className="flex items-center gap-3 min-w-0">
-                <div className="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center text-primary shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-white border border-neutral-200 flex items-center justify-center text-neutral-900 shrink-0">
                   <span className="material-symbols-outlined text-[20px]">description</span>
                 </div>
                 <div className="min-w-0">
-                  <p className="font-mono text-xs sm:text-sm text-primary font-semibold truncate">
+                  <p className="font-mono text-xs sm:text-sm text-neutral-950 font-semibold truncate">
                     {file.name}
                   </p>
-                  <p className="font-mono text-[11px] text-on-surface-variant">
+                  <p className="font-mono text-[11px] text-neutral-500">
                     {formatFileSize(file.size)} • {file.type || 'application/octet-stream'}
                   </p>
                 </div>
@@ -290,14 +321,14 @@ export const FileUpload: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => fileInputRef.current?.click()}
-                  className="font-mono text-xs px-2.5 py-1 rounded bg-surface-container-highest hover:bg-surface-bright text-on-surface transition-colors"
+                  className="font-mono text-xs px-2.5 py-1 rounded bg-white hover:bg-neutral-100 border border-neutral-200 text-neutral-900 transition-colors"
                 >
                   Change File
                 </button>
                 <button
                   type="button"
                   onClick={resetFlow}
-                  className="p-1 rounded hover:bg-surface-container-highest text-error transition-colors"
+                  className="p-1 rounded hover:bg-neutral-100 text-neutral-400 hover:text-red-600 transition-colors"
                   title="Remove file"
                 >
                   <span className="material-symbols-outlined text-base">close</span>
@@ -311,19 +342,19 @@ export const FileUpload: React.FC = () => {
               />
             </div>
 
-            {/* Who can download? Recipient Scope Toggles */}
+            {/* Recipient Scope Cards */}
             <div className="flex flex-col gap-1.5">
-              <span className="font-mono text-xs text-on-surface-variant uppercase tracking-wider font-semibold">
+              <span className="font-mono text-xs text-neutral-600 uppercase tracking-wider font-semibold">
                 Who can download?
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {/* Option 1: Single Person */}
+                {/* Single Person */}
                 <div
                   onClick={() => setMode('SINGLE')}
                   className={`cursor-pointer p-3 rounded-lg flex flex-col gap-1 transition-all border ${
                     mode === 'SINGLE'
-                      ? 'bg-surface-container-high border-primary/40 text-primary shadow-sm'
-                      : 'bg-surface-container border-outline-variant/30 hover:bg-surface-container-high text-on-surface-variant'
+                      ? 'bg-neutral-950 text-white border-neutral-950 shadow-xs'
+                      : 'bg-white border-neutral-200 hover:bg-neutral-50 text-neutral-700'
                   }`}
                 >
                   <div className="flex items-center justify-between">
@@ -333,53 +364,63 @@ export const FileUpload: React.FC = () => {
                     </span>
                     <span
                       className={`material-symbols-outlined text-base ${
-                        mode === 'SINGLE' ? 'text-primary' : 'text-outline-variant/40'
+                        mode === 'SINGLE' ? 'text-white' : 'text-neutral-300'
                       }`}
                     >
                       {mode === 'SINGLE' ? 'check_circle' : 'circle'}
                     </span>
                   </div>
-                  <p className="font-sans text-[11px] text-on-surface-variant">
+                  <p
+                    className={`font-sans text-[11px] ${
+                      mode === 'SINGLE' ? 'text-neutral-300' : 'text-neutral-500'
+                    }`}
+                  >
                     Destructs after 1 download.
                   </p>
                 </div>
 
-                {/* Option 2: Multiple People */}
+                {/* Multiple People */}
                 <div
                   onClick={() => setMode('MULTI')}
                   className={`cursor-pointer p-3 rounded-lg flex flex-col gap-1 transition-all border ${
                     mode === 'MULTI'
-                      ? 'bg-surface-container-high border-primary/40 text-primary shadow-sm'
-                      : 'bg-surface-container border-outline-variant/30 hover:bg-surface-container-high text-on-surface-variant'
+                      ? 'bg-neutral-950 text-white border-neutral-950 shadow-xs'
+                      : 'bg-white border-neutral-200 hover:bg-neutral-50 text-neutral-700'
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs sm:text-sm font-semibold flex items-center gap-1.5 text-on-surface">
+                    <span className="font-mono text-xs sm:text-sm font-semibold flex items-center gap-1.5">
                       <span className="material-symbols-outlined text-[16px]">group</span>
                       Multiple People
                     </span>
                     <span
                       className={`material-symbols-outlined text-base ${
-                        mode === 'MULTI' ? 'text-primary' : 'text-outline-variant/40'
+                        mode === 'MULTI' ? 'text-white' : 'text-neutral-300'
                       }`}
                     >
                       {mode === 'MULTI' ? 'check_circle' : 'circle'}
                     </span>
                   </div>
-                  <p className="font-sans text-[11px] text-on-surface-variant">
+                  <p
+                    className={`font-sans text-[11px] ${
+                      mode === 'MULTI' ? 'text-neutral-300' : 'text-neutral-500'
+                    }`}
+                  >
                     Valid until expiration timer.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Available for: Expiration Grid with 6 pills */}
+            {/* Available for Expiration Pills */}
             <div className="flex flex-col gap-1.5">
               <div className="flex items-center justify-between">
-                <span className="font-mono text-xs text-on-surface-variant uppercase tracking-wider font-semibold">
+                <span className="font-mono text-xs text-neutral-600 uppercase tracking-wider font-semibold">
                   Available for
                 </span>
-                <span className="font-mono text-[11px] text-primary">Auto-destruct timer</span>
+                <span className="font-mono text-[11px] text-neutral-900 font-medium">
+                  Auto-destruct timer
+                </span>
               </div>
               <div className="grid grid-cols-3 sm:grid-cols-6 gap-1.5">
                 {[
@@ -396,23 +437,23 @@ export const FileUpload: React.FC = () => {
                     onClick={() => setTtlMinutes(item.val)}
                     className={`px-2 py-1.5 rounded font-mono text-xs text-center transition-all ${
                       ttlMinutes === item.val
-                        ? 'bg-primary text-on-primary font-semibold shadow-sm'
-                        : 'bg-surface-container hover:bg-surface-container-highest text-on-surface'
+                        ? 'bg-neutral-950 text-white font-semibold shadow-xs'
+                        : 'bg-neutral-100 hover:bg-neutral-200 text-neutral-800'
                     }`}
                   >
                     {item.label}
                   </button>
                 ))}
               </div>
-              <p className="font-sans text-[11px] text-on-surface-variant">
+              <p className="font-sans text-[11px] text-neutral-500">
                 Your file will be automatically removed after expiry.
               </p>
             </div>
 
-            {/* Send File Action Button */}
+            {/* Send Action Button */}
             <button
               type="submit"
-              className="w-full py-2.5 px-4 rounded-lg bg-primary hover:opacity-90 text-on-primary font-mono text-sm font-semibold flex items-center justify-center gap-1.5 transition-transform active:scale-[0.99] shadow-md mt-1"
+              className="w-full py-2.5 px-4 rounded-lg bg-neutral-950 hover:bg-neutral-800 text-white font-mono text-sm font-semibold flex items-center justify-center gap-1.5 transition-transform active:scale-[0.99] shadow-sm mt-1"
             >
               <span>Send File</span>
               <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
@@ -425,37 +466,35 @@ export const FileUpload: React.FC = () => {
           <div className="flex flex-col gap-4 py-2">
             <div>
               <div className="flex items-center justify-between">
-                <p className="font-mono text-base text-primary font-semibold flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+                <p className="font-mono text-base font-bold text-neutral-950 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
                   Uploading...
                 </p>
-                <span className="font-mono text-xs px-2 py-0.5 rounded bg-surface-container-highest text-primary">
+                <span className="font-mono text-xs px-2 py-0.5 rounded bg-neutral-100 text-neutral-700">
                   AES-GCM Stream
                 </span>
               </div>
-              <p className="font-mono text-xs text-on-surface-variant mt-0.5 truncate">
+              <p className="font-mono text-xs text-neutral-500 mt-0.5 truncate">
                 {file.name} • {formatFileSize(file.size)}
               </p>
             </div>
 
-            {/* Progress Module */}
-            <div className="p-4 bg-surface-container rounded-lg flex flex-col gap-2.5 border border-outline-variant/30">
+            <div className="p-4 bg-neutral-50 rounded-lg flex flex-col gap-2.5 border border-neutral-200">
               <div className="flex items-center justify-between font-mono text-xs">
-                <span className="text-primary font-semibold">{uploadProgress}%</span>
-                <span className="text-on-surface-variant">
+                <span className="text-neutral-950 font-semibold">{uploadProgress}%</span>
+                <span className="text-neutral-500">
                   {formatFileSize((file.size * uploadProgress) / 100)} / {formatFileSize(file.size)}
                 </span>
               </div>
 
-              {/* Progress Bar */}
-              <div className="w-full h-2.5 bg-surface-container-lowest rounded-full overflow-hidden">
+              <div className="w-full h-2 bg-neutral-200 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-primary transition-all duration-300 rounded-full"
+                  className="h-full bg-neutral-950 transition-all duration-300 rounded-full"
                   style={{ width: `${uploadProgress}%` }}
                 ></div>
               </div>
 
-              <div className="grid grid-cols-2 gap-2 pt-1 font-mono text-[11px] text-on-surface-variant">
+              <div className="grid grid-cols-2 gap-2 pt-1 font-mono text-[11px] text-neutral-500">
                 <div className="flex items-center gap-1.5">
                   <span className="material-symbols-outlined text-[14px]">speed</span>
                   <span>Speed: {uploadSpeed}</span>
@@ -467,14 +506,13 @@ export const FileUpload: React.FC = () => {
               </div>
             </div>
 
-            {/* Safe-to-close Reassurance Notice */}
-            <div className="p-3.5 rounded-lg bg-surface-container-high flex items-start gap-3 border border-outline-variant/30">
-              <span className="material-symbols-outlined text-primary text-[18px] mt-0.5 shrink-0">
+            <div className="p-3.5 rounded-lg bg-neutral-50 flex items-start gap-3 border border-neutral-200">
+              <span className="material-symbols-outlined text-neutral-900 text-[18px] mt-0.5 shrink-0">
                 verified
               </span>
               <div className="flex flex-col gap-0.5">
-                <p className="font-mono text-xs text-primary font-semibold">Sender invariant</p>
-                <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
+                <p className="font-mono text-xs font-semibold text-neutral-950">Sender invariant</p>
+                <p className="font-sans text-xs text-neutral-500 leading-relaxed">
                   Safe to close window once uploaded. File streams directly from ephemeral RAM.
                 </p>
               </div>
@@ -482,46 +520,45 @@ export const FileUpload: React.FC = () => {
           </div>
         )}
 
-        {/* STATE 4: FILE READY (SEALED 6-DIGIT CODE GENERATED) */}
+        {/* STATE 4: FILE READY (SEALED CARD WITH 6-DIGIT CODE) */}
         {shareData && (
           <div className="flex flex-col gap-4 py-1">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-primary"></span>
-                <p className="font-mono text-base text-primary font-semibold">File ready ✓</p>
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                <p className="font-mono text-base font-bold text-neutral-950">File ready ✓</p>
               </div>
-              <span className="font-mono text-xs px-2 py-0.5 rounded bg-surface-container-highest text-primary">
+              <span className="font-mono text-xs px-2 py-0.5 rounded bg-neutral-100 text-neutral-700">
                 Status: Sealed
               </span>
             </div>
 
-            {/* Monospaced 6-Digit Code Card */}
-            <div className="p-6 bg-surface-container rounded-lg flex flex-col items-center justify-center gap-2 text-center relative overflow-hidden border border-outline-variant/30">
-              <span className="font-mono text-[11px] uppercase tracking-widest text-on-surface-variant font-semibold">
+            {/* Code Box */}
+            <div className="p-6 bg-neutral-50 rounded-xl flex flex-col items-center justify-center gap-2 text-center border border-neutral-200">
+              <span className="font-mono text-[11px] uppercase tracking-widest text-neutral-500 font-semibold">
                 One-Time 6-Digit Code
               </span>
 
-              {/* Displayed as 6 digits with clean spacing: 482 - 731 */}
-              <div className="font-mono text-2xl sm:text-3xl tracking-widest font-bold text-primary select-all py-2 px-6 rounded bg-surface-container-lowest shadow-inner border border-outline-variant/40">
+              <div className="font-mono text-2xl sm:text-3xl tracking-widest font-bold text-neutral-950 select-all py-2 px-6 rounded-lg bg-white border border-neutral-200 shadow-2xs">
                 {format6DigitCode(shareData.shareCode)}
               </div>
 
-              <div className="flex items-center gap-1.5 mt-1">
-                <span className="material-symbols-outlined text-primary text-[14px] animate-pulse">
+              <div className="flex items-center gap-1.5 mt-1 text-neutral-500 font-mono text-xs">
+                <span className="material-symbols-outlined text-neutral-800 text-[14px]">
                   timer
                 </span>
-                <span className="font-mono text-xs text-on-surface-variant">
+                <span>
                   {countdownText ? `Expires in ${countdownText}` : 'Active ephemeral window'}
                 </span>
               </div>
             </div>
 
-            {/* Action Buttons: Copy Code & Copy Link */}
+            {/* Quick Actions */}
             <div className="grid grid-cols-2 gap-2">
               <button
                 type="button"
                 onClick={copyCode}
-                className="py-2.5 px-4 rounded bg-primary hover:opacity-90 text-on-primary font-mono text-xs font-semibold flex items-center justify-center gap-1.5 transition-all shadow"
+                className="py-2.5 px-4 rounded-lg bg-neutral-950 hover:bg-neutral-800 text-white font-mono text-xs font-semibold flex items-center justify-center gap-1.5 transition-all shadow-xs"
               >
                 <span className="material-symbols-outlined text-[16px]">content_copy</span>
                 <span>{copyCodeLabel}</span>
@@ -529,33 +566,32 @@ export const FileUpload: React.FC = () => {
               <button
                 type="button"
                 onClick={copyLink}
-                className="py-2.5 px-4 rounded bg-surface-container-highest hover:bg-surface-bright text-primary font-mono text-xs font-semibold flex items-center justify-center gap-1.5 transition-all"
+                className="py-2.5 px-4 rounded-lg bg-neutral-100 hover:bg-neutral-200 border border-neutral-200 text-neutral-900 font-mono text-xs font-semibold flex items-center justify-center gap-1.5 transition-all"
               >
                 <span className="material-symbols-outlined text-[16px]">link</span>
                 <span>{copyLinkLabel}</span>
               </button>
             </div>
 
-            {/* Policy Details Pill */}
-            <div className="p-2.5 rounded bg-surface-container-lowest flex items-center justify-between text-on-surface-variant font-mono text-xs border border-outline-variant/30">
+            {/* Policy Info */}
+            <div className="p-2.5 rounded-lg bg-neutral-50 flex items-center justify-between text-neutral-600 font-mono text-xs border border-neutral-200">
               <span className="flex items-center gap-1">
-                <span className="material-symbols-outlined text-[14px] text-primary">lock</span>
+                <span className="material-symbols-outlined text-[14px] text-neutral-900">lock</span>
                 <span>
                   {shareData.mode === 'SINGLE'
                     ? 'One recipient can download this file.'
                     : 'Multiple recipients allowed until expiry.'}
                 </span>
               </span>
-              <span className="text-secondary font-medium">
+              <span className="text-neutral-900 font-medium">
                 {shareData.mode === 'SINGLE' ? 'Single-use' : 'Multi-use'}
               </span>
             </div>
 
-            {/* Send Another File Reset */}
             <button
               type="button"
               onClick={resetFlow}
-              className="w-full py-2 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-mono text-xs transition-colors flex items-center justify-center gap-1"
+              className="w-full py-2 rounded-lg bg-white hover:bg-neutral-100 border border-neutral-200 text-neutral-800 font-mono text-xs transition-colors flex items-center justify-center gap-1"
             >
               <span className="material-symbols-outlined text-[14px]">refresh</span>
               <span>Send Another File</span>
@@ -564,8 +600,8 @@ export const FileUpload: React.FC = () => {
         )}
       </div>
 
-      {/* Panel Terminal Branding Footer */}
-      <div className="pt-4 mt-6 border-t border-surface-container-high flex items-center justify-between text-on-surface-variant font-mono text-[11px]">
+      {/* Footer */}
+      <div className="pt-4 mt-6 border-t border-neutral-100 flex items-center justify-between text-neutral-400 font-mono text-[11px]">
         <span>sendTemp Payload Gateway</span>
         <span>Zero-retention node</span>
       </div>
