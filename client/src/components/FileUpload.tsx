@@ -172,20 +172,17 @@ export const FileUpload: React.FC = () => {
   };
 
   return (
-    <div className="bg-white rounded-xl p-5 sm:p-6 flex flex-col justify-between shadow-xs border border-neutral-200/90 h-full">
+    <div className="bg-[#f9fafb] rounded-xl p-5 sm:p-6 flex flex-col justify-between shadow-xs border border-neutral-200/90 h-full">
       <div className="flex flex-col gap-4">
-        {/* Top Header Row matching screenshot */}
-        <div className="flex flex-wrap items-center justify-between gap-2 pb-2 border-b border-neutral-100">
+        {/* Top Header Row */}
+        <div className="flex flex-wrap items-center justify-between gap-2 pb-2 border-b border-neutral-200/60">
           <div className="flex items-center gap-2">
-            <span className="font-mono text-sm font-bold tracking-wider text-neutral-950">
-              SEND
-            </span>
-            <span className="font-mono text-[11px] px-2 py-0.5 rounded bg-neutral-100 text-neutral-600 font-medium">
-              Max 100 MB
+            <span className="font-mono text-xs sm:text-sm font-bold tracking-wider text-neutral-900 uppercase">
+              01. SEND FILE
             </span>
           </div>
 
-          {/* Simulator status tabs matching screenshot */}
+          {/* Simulator status tabs */}
           <div className="flex items-center gap-1 font-mono text-[11px]">
             <span
               className={`px-2 py-0.5 rounded font-medium transition-all ${
@@ -230,7 +227,7 @@ export const FileUpload: React.FC = () => {
           </div>
         )}
 
-        {/* STATE 1: DEFAULT / DROP ZONE (MATCHING SCREENSHOT) */}
+        {/* STATE 1: DEFAULT / DROP ZONE (ANTIGRAVITY / SUPER VAULT) */}
         {!file && !isUploading && !shareData && (
           <div className="flex flex-col gap-4">
             <div>
@@ -240,12 +237,12 @@ export const FileUpload: React.FC = () => {
               </p>
             </div>
 
-            {/* Drop Zone Box */}
+            {/* Drop Zone Box with + Choose File button */}
             <div
               onDrop={handleDrop}
               onDragOver={handleDragOver}
               onClick={() => fileInputRef.current?.click()}
-              className="cursor-pointer group flex flex-col items-center justify-center py-10 px-6 rounded-xl bg-[#fafafa] hover:bg-neutral-50 border border-dashed border-neutral-300 hover:border-neutral-400 transition-all text-center gap-2 relative"
+              className="cursor-pointer group flex flex-col items-center justify-center py-10 px-6 rounded-xl bg-white hover:bg-neutral-50/80 border border-dashed border-neutral-300 hover:border-neutral-400 transition-all text-center gap-2 relative shadow-2xs"
             >
               <input
                 ref={fileInputRef}
@@ -253,38 +250,42 @@ export const FileUpload: React.FC = () => {
                 className="hidden"
                 onChange={handleFileChange}
               />
-              <div className="w-11 h-11 rounded-lg bg-white border border-neutral-200 flex items-center justify-center text-neutral-900 shadow-2xs group-hover:scale-105 transition-transform">
-                <span className="material-symbols-outlined text-[22px]">description</span>
+              <div className="w-12 h-12 rounded-xl bg-neutral-50 border border-neutral-200 flex items-center justify-center text-neutral-900 shadow-2xs group-hover:scale-105 transition-transform">
+                <span className="material-symbols-outlined text-[24px]">cloud_upload</span>
               </div>
               <p className="font-mono text-sm font-semibold text-neutral-950 mt-1">
-                Drop your file here
+                Drag and drop your file here
               </p>
               <p className="font-sans text-xs text-neutral-500">
-                or click to browse from system
+                or select a payload from your device
               </p>
 
               <button
                 type="button"
-                className="mt-2 font-mono text-xs px-4 py-1.5 rounded-lg bg-white hover:bg-neutral-50 border border-neutral-200 text-neutral-900 font-medium shadow-2xs flex items-center gap-1 transition-all"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  fileInputRef.current?.click();
+                }}
+                className="mt-2 font-mono text-xs px-4 py-2 rounded-lg bg-neutral-950 hover:bg-neutral-800 text-white font-semibold shadow-sm flex items-center gap-1.5 transition-all"
               >
                 <span>+</span>
                 <span>Choose File</span>
               </button>
             </div>
 
-            {/* 3 Feature Checklist Pills at Bottom */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1 text-neutral-600 font-mono text-[11px]">
-              <div className="p-2 bg-neutral-100/90 rounded-md flex items-center gap-1.5 border border-neutral-200/50">
-                <span className="material-symbols-outlined text-neutral-700 text-sm">check_circle</span>
-                <span>Max: 100 MB</span>
+            {/* 3 Feature Tags matching prompt */}
+            <div className="grid grid-cols-3 gap-2 pt-1 text-neutral-600 font-mono text-[11px]">
+              <div className="py-2 px-2 bg-white rounded-lg flex items-center justify-center gap-1.5 border border-neutral-200 shadow-2xs font-medium">
+                <span className="material-symbols-outlined text-neutral-900 text-sm">storage</span>
+                <span>Max 100 MB</span>
               </div>
-              <div className="p-2 bg-neutral-100/90 rounded-md flex items-center gap-1.5 border border-neutral-200/50">
-                <span className="material-symbols-outlined text-neutral-700 text-sm">check_circle</span>
-                <span>No registration</span>
+              <div className="py-2 px-2 bg-white rounded-lg flex items-center justify-center gap-1.5 border border-neutral-200 shadow-2xs font-medium">
+                <span className="material-symbols-outlined text-neutral-900 text-sm">no_accounts</span>
+                <span>No reg</span>
               </div>
-              <div className="p-2 bg-neutral-100/90 rounded-md flex items-center gap-1.5 border border-neutral-200/50">
-                <span className="material-symbols-outlined text-neutral-700 text-sm">check_circle</span>
-                <span>Auto-expiring RAM</span>
+              <div className="py-2 px-2 bg-white rounded-lg flex items-center justify-center gap-1.5 border border-neutral-200 shadow-2xs font-medium">
+                <span className="material-symbols-outlined text-neutral-900 text-sm">memory</span>
+                <span>Auto-RAM</span>
               </div>
             </div>
           </div>
@@ -600,10 +601,10 @@ export const FileUpload: React.FC = () => {
         )}
       </div>
 
-      {/* Footer */}
-      <div className="pt-4 mt-6 border-t border-neutral-100 flex items-center justify-between text-neutral-400 font-mono text-[11px]">
-        <span>sendTemp Payload Gateway</span>
-        <span>Zero-retention node</span>
+      {/* Footer metadata */}
+      <div className="pt-4 mt-6 border-t border-neutral-200/70 flex items-center justify-between text-neutral-400 font-mono text-[11px]">
+        <span>sendTemp Protocol Stream</span>
+        <span>Zero-trace egress</span>
       </div>
     </div>
   );
