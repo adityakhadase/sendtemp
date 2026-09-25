@@ -6,17 +6,9 @@
   html, body {
     margin: 0;
     padding: 0;
-    background-color: #0a0b0e;
-    color: #0a0b0e;
+    background-color: #f4f4f5;
+    color: #09090b;
   }
-}
-
-.bg-vault-canvas {
-  background-color: #0a0b0e;
-  background-image: 
-    radial-gradient(circle at 50% 0%, rgba(30, 41, 59, 0.35) 0%, transparent 70%),
-    radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 100% 100%, 24px 24px;
 }
 
 ::-webkit-scrollbar {

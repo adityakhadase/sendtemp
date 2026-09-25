@@ -145,7 +145,7 @@ export const FileReceive: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#f9fafb] rounded-xl p-5 sm:p-6 flex flex-col justify-between shadow-xs border border-neutral-200/90 h-full">
+    <div className="bg-white rounded-2xl p-5 sm:p-6 flex flex-col justify-between shadow-xs border border-neutral-200/80 h-full">
       <div className="flex flex-col gap-4">
         {/* Top Header Row matching Antigravity Vault design */}
         <div className="flex flex-wrap items-center justify-between gap-2 pb-2 border-b border-neutral-200/60">
@@ -251,8 +251,8 @@ export const FileReceive: React.FC = () => {
                 )}
               </button>
 
-              {/* Reassurance Banner */}
-              <div className="bg-white border border-neutral-200/80 rounded-lg p-2.5 flex items-center gap-2 text-xs font-mono text-neutral-500 mt-1 shadow-2xs">
+              {/* Clean transmission note without outline box */}
+              <div className="flex items-center justify-center gap-2 text-xs font-mono text-neutral-500 py-1 mt-0.5">
                 <span className="material-symbols-outlined text-[16px] text-neutral-400">shield</span>
                 <span>Encrypted, peer-buffered temporary transmission</span>
               </div>

@@ -172,7 +172,7 @@ export const FileUpload: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#f9fafb] rounded-xl p-5 sm:p-6 flex flex-col justify-between shadow-xs border border-neutral-200/90 h-full">
+    <div className="bg-white rounded-2xl p-5 sm:p-6 flex flex-col justify-between shadow-xs border border-neutral-200/80 h-full">
       <div className="flex flex-col gap-4">
         {/* Top Header Row */}
         <div className="flex flex-wrap items-center justify-between gap-2 pb-2 border-b border-neutral-200/60">
